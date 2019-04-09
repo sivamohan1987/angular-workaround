@@ -3,4 +3,8 @@
 Value passed from parent component using attribute and acquired using @Input decorator: <b>{{parentCmpName}}</b>
 <br>
 <button (click)="emitToParent()">Emit child title to Parent</button>
+<hr>
+<h4>Async Pipe Example</h4>
+<div ngNonBindable>{{ asyncData }}</div>
+<div>{{ asyncData | async }}</div>
 <br><br>

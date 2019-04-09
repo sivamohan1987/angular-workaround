@@ -17,6 +17,7 @@ export class WorkoutsComponent implements OnInit, OnChanges {
   rangeVal: string;
   urlVal: string;
   currentPage: number;
+  routeSubscription: Object;
   constructor(private router: Router, private route: ActivatedRoute) {
     
   }

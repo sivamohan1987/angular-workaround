@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef } from '@angular/core';
+import { ChildComponent } from './child/child.component';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-app';
+  name: string = 'Guest';
+  childComponentTitle: string;
+  appTitle: FormControl = new FormControl('Default');
+  
+  @ViewChild(ChildComponent) childComponent: ChildComponent;
+  @ViewChild('viewChildEx') viewChildContainer: ElementRef;
+  getChildCmpTitle() {
+    alert("Child component title : " + this.childComponent.cmpTitle);
+    console.log(this.viewChildContainer.nativeElement);
+  }
 }

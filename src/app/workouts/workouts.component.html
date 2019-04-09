@@ -1,0 +1,31 @@
+<h3>Change log sample</h3>
+<div>
+  <label>Enter User Name : </label>
+  <input type="text" [(ngModel)]="userName" #username="ngModel"/>
+  <input type="button" name="setUserName" value="Update User Name" (click)="setUserName()"/>
+</div>
+<hr>
+<h3>Switch case</h3>
+<div>
+  <label>Select BG Color : </label>
+  <input type="radio" name="colorRadio" (click)="colorSelect(greenColor.value, $event)" value="green" #greenColor/> Green
+  <input type="radio" name="colorRadio" (click)="colorSelect(blueColor.value, $event)" value="blue" #blueColor/> Blue
+  <input type="radio" name="colorRadio" (click)="colorSelect(redColor.value, $event)" value="red" #redColor/> Red
+  <div style="padding:30px;background-color:yellow;" #colorContainer>
+    <div [ngSwitch]="currentColor" style="color:white;">
+      <span *ngSwitchCase="'green'">Green color selected</span>
+      <span *ngSwitchCase="'blue'">Blue color selected</span>
+      <span *ngSwitchCase="'red'">Red color selected</span>
+    </div>
+  </div>
+</div>
+<hr>
+<input type="date" #dateEle="ngModel" [(ngModel)]="dateVal"/> {{ dateEle.value }}
+<input type="datetime" #datetimeEle="ngModel" [(ngModel)]="datetimeVal"/>  {{ datetimeEle.value }}
+<input type="month" #monthEle="ngModel" [(ngModel)]="monthVal"/>  {{ monthEle.value }}
+<input type="range" #rangeEle="ngModel" [(ngModel)]="rangeVal"/>  {{ rangeEle.value }}
+<input type="url" #urlEle="ngModel" [(ngModel)]="urlVal"/>  {{ urlEle.value }}
+
+<hr>
+<h2>Current Page is {{ currentPage }}</h2>
+<button (click)="nextPage()">Next Page</button>
